@@ -1,5 +1,6 @@
 <script lang="ts">
   import Popover from "./meltui/Popover.svelte";
+  import OtherAnimalContent from "./header/OtherAnimalContent.svelte";
   let count: number = $state(0);
   const increment = () => {
     count += 1;
@@ -9,8 +10,7 @@
 <div class="flex p-2 header-bg">
   <button>Home</button>
   <button class="ml-auto" onclick={increment}> See Tonks </button>
-  <Popover />
-  <button class="ml-2" onclick={increment}> View Other Cute Pets </button>
+  <Popover label="More Animals" popoverContent={OtherAnimalContent} />
 </div>
 
 <style>
