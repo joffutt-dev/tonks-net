@@ -7,7 +7,7 @@
   };
 </script>
 
-<div class="flex p-2 header-bg">
+<div class="flex p-1 header-bg">
   <button>Home</button>
   <button class="ml-auto" onclick={increment}> See Tonks </button>
   <Popover label="More Animals" popoverContent={OtherAnimalContent} />
