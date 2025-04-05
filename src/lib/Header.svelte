@@ -2,10 +2,6 @@
   import { goto, type RouteResult } from "@mateothegreat/svelte5-router";
   import Popover from "./meltui/Popover.svelte";
   import OtherAnimalContent from "./header/OtherAnimalContent.svelte";
-  let count: number = $state(0);
-  const increment = () => {
-    count += 1;
-  };
 </script>
 
 <div class="flex p-1 header-bg">
@@ -18,6 +14,6 @@
 
 <style>
   .header-bg {
-    background-color: #131313;
+    background-color: #16021c;
   }
 </style>
