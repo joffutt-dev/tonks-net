@@ -7,6 +7,10 @@ settings:
 importers:
 
   .:
+    dependencies:
+      '@mateothegreat/svelte5-router':
+        specifier: ^2.14.1
+        version: 2.14.1(svelte@5.23.0)
     devDependencies:
       '@eslint/js':
         specifier: ^9.22.0
@@ -294,6 +298,11 @@ packages:
 
   '@jridgewell/trace-mapping@0.3.25':
     resolution: {integrity: sha512-vNk6aEwybGtawWmy/PzwnGDOjCkLWSD2wqvjGGAgOAwCGWySYXfYoxt00IJkTF+8Lb57DwOb3Aa0o9CApepiYQ==}
+
+  '@mateothegreat/svelte5-router@2.14.1':
+    resolution: {integrity: sha512-bjvnd7uJA/gG9oZ/B1/VBti2Z8Jc2XJfUl4mxFO04m0ORb9rwUdieMvzSGMfBNmQTHFK6ARU6rjp5rGPGNn9dQ==}
+    peerDependencies:
+      svelte: ^5.0.0
 
   '@melt-ui/svelte@0.86.4':
     resolution: {integrity: sha512-qFagx5z8ccs5SurHaq0f5v/91d5E/5MY+3B3MbstTKGR9wLcpbw3tq5B20LIO9lSxTgUhbOgoU0QsUvqIcEVEw==}
@@ -1373,6 +1382,10 @@ snapshots:
     dependencies:
       '@jridgewell/resolve-uri': 3.1.2
       '@jridgewell/sourcemap-codec': 1.5.0
+
+  '@mateothegreat/svelte5-router@2.14.1(svelte@5.23.0)':
+    dependencies:
+      svelte: 5.23.0
 
   '@melt-ui/svelte@0.86.4(svelte@5.23.0)':
     dependencies:

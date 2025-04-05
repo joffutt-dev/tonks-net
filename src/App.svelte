@@ -1,13 +1,26 @@
 <script lang="ts">
   import Header from "./lib/Header.svelte";
   import Home from "./lib/Home.svelte";
+
+  import { Router, type RouteConfig } from "@mateothegreat/svelte5-router";
+  import SeeTonks from "./lib/SeeTonks.svelte";
+
+  const routes: RouteConfig[] = [
+    {
+      component: Home,
+    },
+    {
+      path: "see-tonks",
+      component: SeeTonks,
+    },
+  ];
 </script>
 
 <main>
   <div>
     <Header />
     <div class="flex text-center ml-auto mr-auto">
-      <Home />
+      <Router {routes} />
     </div>
   </div>
 </main>
