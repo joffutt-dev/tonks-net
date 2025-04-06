@@ -5,12 +5,12 @@ import tailwindcss from '@tailwindcss/vite';
 //TODO fix types
 // https://vite.dev/config/
 export default ({ mode }) => {
-  process.env = { ...process.env, ...loadEnv(mode, process.cwd()) };
+  const env = loadEnv(mode, process.cwd(), '')
   return defineConfig({
     plugins: [svelte(), tailwindcss()],
     server: {
       port: 3000
     },
-    base: process.env.VITE_BASE_URL
+    base: env.VITE_BASE_URL
   })
 }
