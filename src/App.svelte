@@ -8,14 +8,15 @@
 
   const routes: RouteConfig[] = [
     {
+      path: `${import.meta.env.VITE_BASE_URL}`,
       component: Home,
     },
     {
-      path: "see-tonks",
+      path: `${import.meta.env.VITE_BASE_URL}/see-tonks`,
       component: SeeTonks,
     },
     {
-      path: "about",
+      path: `${import.meta.env.VITE_BASE_URL}/about`,
       component: AboutTonks,
     },
   ];

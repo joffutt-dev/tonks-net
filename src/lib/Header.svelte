@@ -5,10 +5,18 @@
 </script>
 
 <div class="flex p-1 header-bg">
-  <button onclick={() => goto("/")}>Home</button>
-  <button class="ml-auto" onclick={() => goto("/see-tonks")}>
+  <button onclick={() => goto(`${import.meta.env.VITE_BASE_URL}`)}>Home</button>
+  <button
+    class="ml-auto"
+    onclick={() => goto(`${import.meta.env.VITE_BASE_URL}/see-tonks`)}
+  >
     See Tonks
   </button>
-  <button class="ml-2" onclick={() => goto("/about")}> About </button>
+  <button
+    class="ml-2"
+    onclick={() => goto(`${import.meta.env.VITE_BASE_URL}/about`)}
+  >
+    About
+  </button>
   <Popover label="More Animals" popoverContent={OtherAnimalContent} />
 </div>
