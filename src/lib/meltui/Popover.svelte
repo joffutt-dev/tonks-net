@@ -59,7 +59,7 @@
     {...$content}
     use:content
     transition:fade={{ duration: 100 }}
-    class=" content"
+    class="content"
   >
     <div {...$arrow} use:arrow></div>
     <ContentComponent />
