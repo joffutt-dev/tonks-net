@@ -11,7 +11,8 @@
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #290036;
+  /* background-color: #290036; */
+  @apply bg-emerald-800;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -31,19 +32,25 @@ button {
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #38013d;
+  /* background-color: #38013d; */
+  @apply bg-emerald-900;
   cursor: pointer;
   vertical-align: middle;
   transition: border-color 0.25s;
 }
 button:hover {
-  border-color: #d29eff;
+  @apply border-emerald-500;
 }
 button:focus,
 button:focus-visible,
 button:active {
   outline: 2px solid;
-  outline-color: #7a29c2;
+  @apply outline-emerald-400;
+}
+
+.header-bg {
+  border-bottom: 1px solid;
+  @apply border-b-emerald-600;
 }
 
 @media (prefers-color-scheme: light) {

@@ -11,9 +11,3 @@
   </button>
   <Popover label="More Animals" popoverContent={OtherAnimalContent} />
 </div>
-
-<style>
-  .header-bg {
-    background-color: #16021c;
-  }
-</style>
