@@ -1,6 +1,7 @@
 <script lang="ts">
   import Header from "./lib/Header.svelte";
   import Home from "./lib/Home.svelte";
+  import { BASE_URL } from "./constants";
 
   import { Router, type RouteConfig } from "@mateothegreat/svelte5-router";
   import SeeTonks from "./lib/SeeTonks.svelte";
@@ -8,15 +9,15 @@
 
   const routes: RouteConfig[] = [
     {
-      path: `${import.meta.env.VITE_BASE_URL}`,
+      path: `${BASE_URL}`,
       component: Home,
     },
     {
-      path: `${import.meta.env.VITE_BASE_URL}/see-tonks`,
+      path: `${BASE_URL}/see-tonks`,
       component: SeeTonks,
     },
     {
-      path: `${import.meta.env.VITE_BASE_URL}/about`,
+      path: `${BASE_URL}/about`,
       component: AboutTonks,
     },
   ];
