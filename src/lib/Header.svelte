@@ -9,5 +9,6 @@
   <button class="ml-auto" onclick={() => goto("/see-tonks")}>
     See Tonks
   </button>
+  <button class="ml-2" onclick={() => goto("/about")}> About </button>
   <Popover label="More Animals" popoverContent={OtherAnimalContent} />
 </div>

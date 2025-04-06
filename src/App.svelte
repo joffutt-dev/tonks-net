@@ -4,6 +4,7 @@
 
   import { Router, type RouteConfig } from "@mateothegreat/svelte5-router";
   import SeeTonks from "./lib/SeeTonks.svelte";
+  import AboutTonks from "./lib/AboutTonks.svelte";
 
   const routes: RouteConfig[] = [
     {
@@ -12,6 +13,10 @@
     {
       path: "see-tonks",
       component: SeeTonks,
+    },
+    {
+      path: "about",
+      component: AboutTonks,
     },
   ];
 </script>
@@ -24,21 +29,3 @@
     </div>
   </div>
 </main>
-
-<!-- <style>
-  .logo {
-    height: 6em;
-    padding: 1.5em;
-    will-change: filter;
-    transition: filter 300ms;
-  }
-  .logo:hover {
-    filter: drop-shadow(0 0 2em #646cffaa);
-  }
-  .logo.svelte:hover {
-    filter: drop-shadow(0 0 2em #ff3e00aa);
-  }
-  .read-the-docs {
-    color: #888;
-  }
-</style> -->
