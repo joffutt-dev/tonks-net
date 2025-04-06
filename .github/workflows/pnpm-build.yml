@@ -1,4 +1,4 @@
-name: NodeJS with Gulp
+name: Building repository
 
 on:
   push:
@@ -19,6 +19,13 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: Make envfile
+        uses: SpicyPizza/create-envfile@v2.0
+        with:
+          envkey_VITE_SULLY_URL: ${{ vars.VITE_SULLY_URL }}
+          directory: .
+          file_name: .env
+
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v4
         with:
@@ -32,4 +39,4 @@ jobs:
       - name: Build
         run: |
           pnpm install
-          gulp
+          pnpm build
