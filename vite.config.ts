@@ -7,5 +7,6 @@ export default defineConfig({
   plugins: [svelte(), tailwindcss()],
   server: {
     port: 3000
-  }
+  },
+  base: "./"
 })
