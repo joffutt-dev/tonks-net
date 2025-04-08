@@ -1,7 +1,7 @@
 <script>
   import SullyAvatar from "../../assets/sully-avatar.webp";
   //TODO replace with Yuji
-  import TonksAvatar from "/tonks-avatar.webp";
+  import YujiAvatar from "../../assets/yujiavatar.webp";
   import { createSeparator } from "@melt-ui/svelte";
 
   const {
@@ -31,7 +31,7 @@
     <button
       onclick={() => window.open(import.meta.env.VITE_SULLY_URL, "_blank")}
       ><div class="flex">
-        <img src={TonksAvatar} alt="Avatar" class="h-6 w-6 rounded-[inherit]" />
+        <img src={YujiAvatar} alt="Avatar" class="h-6 w-6 rounded-[inherit]" />
         <p class="ml-2">Yuji</p>
       </div>
     </button>
