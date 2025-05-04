@@ -25,6 +25,11 @@ h1 {
   line-height: 1.1;
 }
 
+li {
+  margin-left: 25px;
+  list-style-type: circle;
+}
+
 button {
   border-radius: 8px;
   border: 1px solid transparent;
@@ -34,6 +39,19 @@ button {
   font-family: inherit;
   /* background-color: #38013d; */
   @apply bg-emerald-900;
+  cursor: pointer;
+  vertical-align: middle;
+  transition: border-color 0.25s;
+}
+button.ghost {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.4em 0.75em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  /* background-color: #38013d; */
+  @apply bg-transparent;
   cursor: pointer;
   vertical-align: middle;
   transition: border-color 0.25s;
@@ -66,37 +84,30 @@ button:active {
   }
 }
 
-/*a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
+.carousel {
+  display: inline-flex;
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
-a:hover {
-  color: #535bf2;
-} */
+.carousel::-webkit-scrollbar {
+  display: none;
+}
 
-/* body {
-  margin: 0;
+.carousel-item {
+  box-sizing: content-box;
   display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
-} */
-
-/* h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+  flex: none;
+  scroll-snap-align: start;
 }
-
-.card {
-  padding: 2em;
-} */
-
-/* #app {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
-} */
-/* 
- */
+.carousel-start .carousel-item {
+  scroll-snap-align: start;
+}
+.carousel-center .carousel-item {
+  scroll-snap-align: center;
+}
+.carousel-end .carousel-item {
+  scroll-snap-align: end;
+}

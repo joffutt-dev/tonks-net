@@ -63,7 +63,5 @@
   >
     <div {...$arrow} use:arrow></div>
     <ContentComponent />
-    <!-- <svelte:component this={content} /> -->
-    <!-- <div class="flex flex-col gap-2.5">{content}</div> -->
   </div>
 {/if}
