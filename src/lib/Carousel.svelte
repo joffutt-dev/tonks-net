@@ -14,7 +14,6 @@
   const {
     images = [],
     startIndex = 0,
-    showControls = true,
     autoScroll = true,
     scrollInterval = 3000, // milliseconds between auto-scrolls
   }: CarouselProps = $props();
@@ -25,6 +24,7 @@
   let currentIndex = $state(startIndex);
   let isPaused = $state(false);
   let intervalId: number | null = null;
+  let pauseText = $derived(isPaused ? "Resume" : "Pause");
 
   function scrollIntoView(imageIndex: number) {
     const el = document.getElementById(`image ${imageIndex}`);
@@ -130,37 +130,7 @@
       />
     </svg>
   </button>
-  <button class="pause" onclick={togglePause}>
-    {#if !isPaused}
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke="currentColor"
-        class="size-12 fill-white"
-      >
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          d="M15.75 5.25v13.5m-7.5-13.5v13.5"
-        />
-      </svg>
-    {:else}
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke="currentColor"
-        class="size-12 fill-white"
-      >
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.347a1.125 1.125 0 0 1 0 1.972l-11.54 6.347a1.125 1.125 0 0 1-1.667-.986V5.653Z"
-        />
-      </svg>
-    {/if}
-  </button>
+
   <div class="carousel rounded-3xl">
     <!-- svelte-ignore a11y_click_events_have_key_events -->
     <!-- svelte-ignore a11y_no_static_element_interactions -->
@@ -179,6 +149,9 @@
       {/if}
     </div>
   </div>
+  <div class="flex justify-center">
+    <button onclick={togglePause}>{pauseText}</button>
+  </div>
 </div>
 
 <style>
@@ -186,7 +159,7 @@
     max-width: 100%;
     max-height: calc(100vh - 100px);
     aspect-ratio: auto;
-    /* object-fit: contain; */
+    object-fit: contain;
     transition: opacity 0.3s ease;
   }
 

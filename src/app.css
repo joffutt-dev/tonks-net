@@ -112,11 +112,11 @@ button:active {
   scroll-snap-align: end;
 }
 
-.carousel-container:hover > .pause {
+/* .carousel-container:hover > .pause {
   @apply opacity-50;
 }
 
 .pause {
   @apply opacity-0;
   @apply h-16 rounded-full shadow-2xl bottom-1/2 right-1/2 absolute bg-gray-800;
-}
+} */
