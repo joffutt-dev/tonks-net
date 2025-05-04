@@ -77,7 +77,6 @@
   const imageCount = $derived(images.length);
   const hasImages = $derived(imageCount > 0);
   const displayIndex = $derived(currentIndex + 1);
-  const pauseButtonText = $derived(isPaused ? "Resume" : "Pause");
 
   // Effects
   $effect(() => {
@@ -96,8 +95,75 @@
   });
 </script>
 
-<div class="mt-1">
-  <div class="carousel cursor-pointer rounded-3xl">
+<div class="mt-1 relative carousel-container">
+  <button
+    aria-label="previous"
+    class="top-0 left-0 absolute h-full w-1/5 opacity-0 hover:opacity-50 hover:bg-gray-700"
+    onclick={prevImage}
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      class="size-20 fill-white ml-auto mr-auto"
+    >
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        d="m18.75 4.5-7.5 7.5 7.5 7.5m-6-15L5.25 12l7.5 7.5"
+      />
+    </svg>
+  </button>
+  <button
+    aria-label="next"
+    class="top-0 right-0 absolute h-full w-1/5 opacity-0 hover:opacity-50 hover:bg-gray-700"
+    onclick={nextImage}
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      class="size-20 fill-white ml-auto mr-auto"
+    >
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        d="m5.25 4.5 7.5 7.5-7.5 7.5m6-15 7.5 7.5-7.5 7.5"
+      />
+    </svg>
+  </button>
+  <button class="pause" onclick={togglePause}>
+    {#if !isPaused}
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+        class="size-12 fill-white"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M15.75 5.25v13.5m-7.5-13.5v13.5"
+        />
+      </svg>
+    {:else}
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+        class="size-12 fill-white"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.347a1.125 1.125 0 0 1 0 1.972l-11.54 6.347a1.125 1.125 0 0 1-1.667-.986V5.653Z"
+        />
+      </svg>
+    {/if}
+  </button>
+  <div class="carousel rounded-3xl">
+    <!-- svelte-ignore a11y_click_events_have_key_events -->
+    <!-- svelte-ignore a11y_no_static_element_interactions -->
     <div class="carousel-item" id={CAROUSEL_ID}>
       {#if hasImages}
         {#each images as image, i}
@@ -113,21 +179,6 @@
       {/if}
     </div>
   </div>
-  {#if showControls && imageCount > 1}
-    <div class="controls">
-      <button onclick={prevImage}> Previous </button>
-
-      {#if autoScroll}
-        <button onclick={togglePause}>
-          {pauseButtonText}
-        </button>
-      {/if}
-
-      <span>{displayIndex} / {imageCount}</span>
-
-      <button onclick={nextImage}> Next </button>
-    </div>
-  {/if}
 </div>
 
 <style>
@@ -142,13 +193,5 @@
   .no-images {
     color: #666;
     font-style: italic;
-  }
-
-  .controls {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 15px;
-    width: 100%;
   }
 </style>
