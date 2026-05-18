@@ -55,6 +55,7 @@ jobs:
 
       - name: Build
         run: |
+          pnpm install --ignore-scripts
           pnpm approve-builds esbuild
           pnpm install
           pnpm build
