@@ -42,11 +42,10 @@ button {
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  /* background-color: #38013d; */
-  @apply bg-emerald-900;
+  @apply bg-emerald-600 text-white;
   cursor: pointer;
   vertical-align: middle;
-  transition: border-color 0.25s;
+  transition: all 0.25s;
 }
 button.ghost {
   border-radius: 8px;
@@ -55,28 +54,55 @@ button.ghost {
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  /* background-color: #38013d; */
-  @apply bg-transparent;
+  @apply bg-transparent text-inherit;
   cursor: pointer;
   vertical-align: middle;
-  transition: border-color 0.25s;
+  transition: all 0.25s;
 }
 button:hover {
-  @apply border-emerald-500;
+  @apply bg-emerald-700;
+}
+button:active {
+  @apply bg-emerald-800;
 }
 button:focus,
-button:focus-visible,
-button:active {
+button:focus-visible {
   outline: 2px solid;
-  @apply outline-emerald-400;
+  outline-offset: 2px;
+  @apply outline-emerald-500;
 }
 
 .dark button {
-  @apply bg-slate-800;
+  @apply bg-emerald-700 text-white;
 }
 
 .dark button:hover {
-  @apply border-emerald-400;
+  @apply bg-emerald-800;
+}
+
+.dark button:active {
+  @apply bg-emerald-900;
+}
+
+.dark button:focus,
+.dark button:focus-visible {
+  @apply outline-emerald-400;
+}
+
+button.ghost:hover {
+  @apply bg-emerald-100 text-emerald-900;
+}
+
+button.ghost:active {
+  @apply bg-emerald-200 text-emerald-900;
+}
+
+.dark button.ghost:hover {
+  @apply bg-slate-700 text-slate-100;
+}
+
+.dark button.ghost:active {
+  @apply bg-slate-600 text-slate-100;
 }
 
 .header-bg {
