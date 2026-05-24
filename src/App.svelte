@@ -6,6 +6,7 @@
   import { Router, type RouteConfig } from "@mateothegreat/svelte5-router";
   import SeeTonks from "./lib/SeeTonks.svelte";
   import AboutTonks from "./lib/AboutTonks.svelte";
+  import { themeStore } from "./lib/themeStore";
 
   const routes: RouteConfig[] = [
     {

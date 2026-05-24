@@ -3,6 +3,7 @@
   import Popover from "./meltui/Popover.svelte";
   import OtherAnimalContent from "./header/OtherAnimalContent.svelte";
   import { BASE_URL } from "../constants";
+  import { themeStore } from "./themeStore";
 </script>
 
 <div class="flex p-1 header-bg">
@@ -14,4 +15,11 @@
     About
   </button>
   <Popover label="More Animals" popoverContent={OtherAnimalContent} />
+  <button class="ml-2" onclick={() => themeStore.toggle()} title="Toggle dark mode">
+    {#if $themeStore === 'dark'}
+      ☀️
+    {:else}
+      🌙
+    {/if}
+  </button>
 </div>
