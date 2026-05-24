@@ -1,8 +1,7 @@
 <script>
-  import SullyAvatar from "../../assets/sully-avatar.webp";
-  //TODO replace with Yuji
-  import YujiAvatar from "../../assets/yujiavatar.webp";
   import { createSeparator } from "@melt-ui/svelte";
+  import SullyAvatar from "../../assets/sully-avatar.webp";
+  import YujiAvatar from "../../assets/yujiavatar.webp";
 
   const {
     elements: { root: horizontal },
@@ -12,7 +11,7 @@
   });
 </script>
 
-<div class="bg-emerald-800 shadow-lg py-3 min-w-36">
+<div class="bg-emerald-900 dark:bg-slate-900 shadow-lg py-3 min-w-36">
   <ul>
     <li>
       <button
