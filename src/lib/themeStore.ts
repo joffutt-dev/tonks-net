@@ -1,4 +1,4 @@
-import { writable } from "svelte/store";
+import { get, writable } from "svelte/store";
 
 export type Theme = "light" | "dark";
 
@@ -22,16 +22,15 @@ function createThemeStore() {
   return {
     subscribe,
     toggle: () => {
-      let newTheme: Theme;
-      const unsubscribe = subscribe((currentTheme) => {
-        newTheme = currentTheme === "light" ? "dark" : "light";
-      })();
-      unsubscribe();
+      // 1. Grab the current value cleanly without subscriptions
+      const currentTheme = get({ subscribe });
+      const newTheme = currentTheme === "light" ? "dark" : "light";
 
-      set(newTheme!);
+      // 2. Update the store and side effects
+      set(newTheme);
       if (typeof window !== "undefined") {
-        localStorage.setItem("theme", newTheme!);
-        applyTheme(newTheme!);
+        localStorage.setItem("theme", newTheme);
+        applyTheme(newTheme);
       }
     },
     set: (theme: Theme) => {
